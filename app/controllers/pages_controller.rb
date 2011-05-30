@@ -3,6 +3,7 @@ class PagesController < FrontController
     requested_page = params[ :page ]
     
     if requested_page
+      @title = requested_page.titleize
       render "pages/#{ requested_page }"
     else
       render 'pages/home'
